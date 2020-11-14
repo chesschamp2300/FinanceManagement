@@ -5,7 +5,7 @@
         <meta charset = "utf-8"/>
         <meta name = "viewport" content = "width = device-width" />
         <title>Student Loan Calculator</title>
-        <link rel = "stylesheet" href = "myStylesheet.css">
+        <link rel = "stylesheet" href = "{{url_for('static',filename='myStylesheet.css')}}">
         <style>
         </style>
     </head>
@@ -29,7 +29,7 @@
             <br>
                 <label for="term">Type of term:</label>
                     <select id="termType" name="termType" class = "select">
-                      <option value="anual">Anual</option>
+                      <option value="anual">Annual</option>
                       <option value="monthly">Monthly</option>
                       <option value="quarterly">Quarterly</option>
                     </select>
