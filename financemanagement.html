@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8"/>
+        <meta name = "viewport" content = "width = device-width" />
+        <title>Student Loan Calculator</title>
+        <link rel = "stylesheet" href = "{{url_for('static',filename='myStylesheet.css')}}">
+        <style>
+        </style>
+    </head>
+    <body>
+        <h3>Hack OHI/O</h3>
+        <hr>
+        <h1>Pay More and Save Big</h1>
+        <p>Most Students default to paying the minimun monthly amount on student loans without realizing how much paying even a little more can save in the long run.</p>
+        <h2>Loan Calculator</h2>
+        <p>
+           A loan calculator to help you determine what payment is optimal based on information given.
+           Enter Loan Amount,Interest Rate, and Monthly Minimun Payment. Use slider to adjust monthly payments to view your savings.
+        </p>
+        <br>
+        <form action = "serverpage.php" method="post">
+                <div>
+                    <input type = "number" id = "principle" name = "principle" required placeholder="Ex. 25000">
+            <br>
+                    <label for = "principle"><b>Loan Amount</b></label>
+                </div>
+            <br>
+                <label for="term">Type of term:</label>
+                    <select id="termType" name="termType" class = "select">
+                      <option value="anual">Annual</option>
+                      <option value="monthly">Monthly</option>
+                      <option value="quarterly">Quarterly</option>
+                    </select>
+            <br>
+            <br>
+                <div>
+                    <input type = "number" id = "iRate" name = "iRate>" required placeholder="Ex. 6">
+                    <br>
+                    <label for = "iRate"><b>Interest Rate %</b></label>
+                </div>
+            <br>
+                <div>
+                   <input type = "number" id = "mMpayment" name = mMpayment required placeholder="Ex. 600"><br>
+                   <label for = "mMpayment"><b>Monthly Minimun Payment</b></label> 
+                </div>
+                <div>
+                </div>
+            
+            <br>
+                <div class="slidecontainer">
+                    <input type="range" min="mMpayment" max="principle" value="" class="slider" id="Range">
+                </div>
+                <div> 
+            <br>
+                    <label for = "totalCost"><b>Total Cost:</b></label><br><br>
+                    <label for = "totalSav"><b>Total Savings:</b></label>
+                </div>
+        </form>
+        <script>
+            var principle = document.getElementById("principle");
+            var interest = document.getElementById("iRate");
+            var mPayment = document.getElementById("mMpayment");
+            principle.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("mybutton").click();
+            }
+            });
+            interest.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("mybutton").click();
+            }
+            });
+            mPayment.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("mybutton").click();
+            }
+            });
+        </script>
+    </body>
+</html>
