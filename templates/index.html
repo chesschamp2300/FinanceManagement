@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset = "utf-8"/>
         <meta name = "viewport" content = "witdh = device-width" />
         <title>Student Loan Calculator</title>
-        <link rel = "stylesheet" href = "myStylesheet.css">
+        <link rel = "stylesheet" type="text/css" href = "{{url_for('static', filename='myStylesheet.css')}}">
         <style>
         </style>
     </head>
@@ -16,8 +15,8 @@
         <p>Most Students default to paying the minimun monthly amount on student loans without realizing how much paying even a little more can save in the long run.</p>
         <h2>Loan Calculator</h2>
         <p style = "font-family:serif">
-           A loan calculator to help you determine what payment is optimal based on information given.
-           Enter Principle, Interest Rate and Term of loan. In oder to fully optimize the information given you must enter other monthly payments as well such as bills for car, food and housing. Lastly, enter gross salary. Use slider to adjust monthly payments to view different outcomes.
+           A loan calculator to help you determine what payment is optimal based on information given. <br>
+           Enter Principle, Interest Rate and Term of loan. In order to fully optimize the information given you must enter other monthly payments as well such as bills for car, food and housing. Lastly, enter gross salary. Use slider to adjust monthly payments to view different outcomes.
         </p>
         <br>
         <form action = "serverpage.php" method="post">
