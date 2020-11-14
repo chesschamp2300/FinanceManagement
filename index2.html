@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8"/>
+        <meta name = "viewport" content = "witdh = device-width" />
+        <title>Student Loan Calculator</title>
+        <link rel = "stylesheet" href = "myStylesheet.css">
+        <style>
+        </style>
+    </head>
+    <body>
+        <h3>HackOhi/O</h3>
+        <hr>
+        <h1>Pay More and Save Big</h1>
+        <p>Most Students default to paying the minimun monthly amount on student loans without realizing how much paying even a little more can save in the long run.</p>
+        <h2>Loan Calculator</h2>
+        <p style = "font-family:serif">
+           A loan calculator to help you determine what payment is optimal based on information given.
+           Enter Principle, Interest Rate and Term of loan. In oder to fully optimize the information given you must enter other monthly payments as well such as bills for car, food and housing. Lastly, enter gross salary. Use slider to adjust monthly payments to view different outcomes.
+        </p>
+        <br>
+        <form action = "serverpage.php" method="post">
+            
+                <div>
+                    <input type = "number" id = "principle" name = "principle" required placeholder="Ex. 25000"><br>
+                    <label for = "principle"><b>Loan Amount</b></label>
+                </div>
+            <br>
+                <div>
+                    <input type = "number" id = "iRate" name = "iRate>" required placeholder="Ex. 6"><br>
+                    <label for = "iRate"><b>Interest Rate</b></label>
+                </div>
+            <br>
+                <div>
+                   <input type = "number" id = "mMpayment" name = mMpayment required placeholder="Ex. 600"><br>
+                   <label for = "mMpayment"><b>Monthly Minimun Payment</b></label> 
+                </div>
+            
+            <div></div>
+        </form>
+        <br>
+        <form>
+            <div class="slidecontainer">
+            <input type="range" min="mMpayment" max="principle" value="" class="slider" id="Range">
+            </div>
+        </form>
+        <form>
+            <div> 
+                <br>
+                <label for = "totalCost"><b>Total Cost:</b></label><br><br>
+                <label for = "totalSav"><b>Total Savings:</b></label>
+            </div>
+        </form>
+    </body>
+</html>
