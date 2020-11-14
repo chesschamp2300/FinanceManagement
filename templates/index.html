@@ -9,7 +9,7 @@
         </style>
     </head>
     <body>
-        <h3>HackOhi/O</h3>
+        <h3>Hack OHI/O</h3>
         <hr>
         <h1>Pay More and Save Big</h1>
         <p>Most Students default to paying the minimun monthly amount on student loans without realizing how much paying even a little more can save in the long run.</p>
@@ -19,8 +19,7 @@
            Enter Principle, Interest Rate and Term of loan. In order to fully optimize the information given you must enter other monthly payments as well such as bills for car, food and housing. Lastly, enter gross salary. Use slider to adjust monthly payments to view different outcomes.
         </p>
         <br>
-        <form action = "serverpage.php" method="post">
-            
+        <form action = "serverpage.php" method="post">      
                 <div>
                     <input type = "number" id = "principle" name = "principle" required placeholder="Ex. 25000"><br>
                     <label for = "principle"><b>Loan Amount</b></label>
@@ -36,7 +35,9 @@
                    <label for = "mMpayment"><b>Monthly Minimun Payment</b></label> 
                 </div>
             
-            <div></div>
+            <div>
+                <input type="submit" style="display: none" />
+            </div>
         </form>
         <br>
         <form>
@@ -47,9 +48,32 @@
         <form>
             <div> 
                 <br>
-                <label for = "totalCost"><b>Total Cost:</b></label><br><br>
+                <label for = "totalCost"><b>Total Cost:</b></label><label id="totalCost"></label><br><br>
                 <label for = "totalSav"><b>Total Savings:</b></label>
             </div>
         </form>
+        <script>
+            var principle = document.getElementById("principle");
+            var interest = document.getElementById("iRate");
+            var mPayment = document.getElementById("mMpayment");
+            principle.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("mybutton").click();
+            }
+            });
+            interest.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("mybutton").click();
+            }
+            });
+            mPayment.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("mybutton").click();
+            }
+            });
+        </script>
     </body>
 </html>
