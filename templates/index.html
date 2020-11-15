@@ -20,7 +20,7 @@
            Enter Loan Amount,Interest Rate, and Monthly Minimun Payment. Use slider to adjust monthly payments to view your savings.
         </p>
         <br>
-        <form action = "" method="post" onsubmit="return calculate()">
+        <form action = "" method="post">
                 <div>
                     <input type = "number" id = "principle" name = "principle" required placeholder="Ex. 25000" onkeypress="calculate()">
             <br>
@@ -49,7 +49,7 @@
             <br>
             
                 <div>
-                    <input type="submit" value="Calculate" id="calculate">
+                    <input type="submit" value="Calculate" id="calculate" onclick="return calculate()">
                 </div>
             
             <br>
@@ -70,7 +70,7 @@
                 var term = document.getElementById("termType");
                 var termType = term.options[term.selectedIndex].value;
                 var lengthTerm = document.getElementById("term");
-                const totalCost = 0;
+                var totalCost = 0;
                 if(termType == 'annual'){
                     //add calculations
                 }else if(termType == 'monthly'){
