@@ -16,13 +16,13 @@
         <p>Most Students default to paying the minimun monthly amount on student loans without realizing how much paying even a little more can save in the long run.</p>
         <h2>Loan Calculator</h2>
         <p>
-           A loan calculator to help you determine what payment is optimal based on information given.
-           Enter Loan Amount, Interest Rate, Minimun Payment and Term of loan. In order to fully optimize the information given you must enter other monthly payments as well such as bills for car, food and housing. Lastly, enter gross salary. Use slider to adjust monthly payments to view different outcomes.
+          A loan calculator to help you determine what payment is optimal based on information given.
+           Enter Loan Amount,Interest Rate, and Monthly Minimun Payment. Use slider to adjust monthly payments to view your savings.
         </p>
         <br>
         <form action = "" method="post" onsubmit="return calculate()">
                 <div>
-                    <input type = "number" id = "principle" name = "principle" required placeholder="Ex. 25000">
+                    <input type = "number" id = "principle" name = "principle" required placeholder="Ex. 25000" onkeypress="calculate()">
             <br>
                     <label for = "principle"><b>Loan Amount</b></label>
                 </div>
@@ -36,21 +36,16 @@
             <br>
             <br>
                 <div>
-                    <input type = "number" id = "iRate" name = "iRate>" required placeholder="Ex. 6">
+                    <input type = "number" id = "iRate" name = "iRate>" required placeholder="Ex. 6" onkeypress="calculate()">
                     <br>
                     <label for = "iRate"><b>Interest Rate</b></label>
                 </div>
             <br>
                 <div>
-                   <input type = "number" id = "mMpayment" name = mMpayment required placeholder="Ex. 600"><br>
+                   <input type = "number" id = "mMpayment" name = mMpayment required placeholder="Ex. 600" onkeypress="calculate()"><br>
                    <label for = "mMpayment"><b>Monthly Minimun Payment</b></label> 
                 </div>
-            <br>
-                <div>
-                   <input type = "number" id = "term" name = term required placeholder="Ex. 4">
-                    <br>
-                   <label for = "term"><b>Term of Loan</b></label> 
-                </div>
+            
             <br>
             
                 <div>
