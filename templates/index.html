@@ -20,7 +20,7 @@
            Enter Loan Amount,Interest Rate, and Monthly Minimun Payment. Use slider to adjust monthly payments to view your savings.
         </p>
         <br>
-        <form action = "serverpage.php" method="post">
+        <form action = "" method="post">
                 <div>
                     <input type = "number" id = "principle" name = "principle" required placeholder="Ex. 25000" onkeypress="calculate()">
             <br>
@@ -49,7 +49,7 @@
             <br>
             
                 <div>
-                    <input type="submit" value="Calculate" id="calculate" onclick="return calculate()">
+                    <input type="button" value="Calculate" id="calculate" onclick="calculate()">
                 </div>
             
             <br>
@@ -58,25 +58,32 @@
                 </div>
                 <div> 
             <br>
-                    <label for = "totalCost"><b>Total Cost:</b></label><br><br>
+                    <label for = "totalCost"><b>Total Cost:</b></label><label id="cost">0</label><br><br>
                     <label for = "totalSav"><b>Total Savings:</b></label>
                 </div>
         </form>
         <script>
             function calculate(){
-                var principle = document.getElementById("principle").value;
+                var loan = document.getElementById("principle").value;
                 var interest = document.getElementById("iRate").value;
                 var mPayment = document.getElementById("mMpayment").value;
                 var term = document.getElementById("termType");
                 var termType = term.options[term.selectedIndex].value;
-                var lengthTerm = document.getElementById("term");
-                var totalCost = 0;
-                if(termType == 'annual'){
+                var principle = parseFloat(loan.value);
+                var calculatedInterest = parseFloat(interest.value) / 100;
+                var cost = document.getElementById("cost");
+                var totalCost = principle * (1+(calculatedInterest/100)/12) - mPayment;
+                cost.innerHTML = "" + totalCost;
+                if(termType === 'annual'){
                     //add calculations
-                }else if(termType == 'monthly'){
+                    var totalCost = principle * (1+(calculatedInterest/100)/12) - mPayment;
+                    cost.innerHTML = "" + totalCost;
+                }else if(termType === 'monthly'){
                     //add calculations
-                }else if(termType == 'quarterly'){
+                    var totalCost = principle * (1+(calculatedInterest/100)/1) - mPayment;
+                }else if(termType === 'quarterly'){
                     //add calculations
+                    var totalCost = principle * (1+(calculatedInterest/100)/4) - mPayment;
                 }
             }
         </script>
