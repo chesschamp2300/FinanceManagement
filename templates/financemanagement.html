@@ -5,7 +5,7 @@
         <meta charset = "utf-8"/>
         <meta name = "viewport" content = "width = device-width" />
         <title>Student Loan Calculator</title>
-        <link rel = "stylesheet" href = "static/myStylesheet.css">
+        <link rel = "stylesheet" href = "{{url_for('static',filename='myStylesheet.css')}}">
         <style>
         </style>
     </head>
@@ -61,10 +61,9 @@
                 </section>
              </section>
             <section class='graph'>
-                <h3>graph area </h3>
+                <h3>graph area</h3>
             </section>
         </section>
-
-        <script src='main.js'></script>>
+        <script src="{{url_for('static',filename='main.js')}}"></script>
     </body>
 </html>
