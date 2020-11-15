@@ -1,5 +1,3 @@
-# FinanceManagement
-
 # Pay More and Save Big
 Most students default to paying the minimun monthly amount on student loans without realizing how much paying even a little more can save in the long run.
 
