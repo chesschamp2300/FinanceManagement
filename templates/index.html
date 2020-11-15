@@ -20,7 +20,7 @@
            Enter Loan Amount, Interest Rate, Minimun Payment and Term of loan. In order to fully optimize the information given you must enter other monthly payments as well such as bills for car, food and housing. Lastly, enter gross salary. Use slider to adjust monthly payments to view different outcomes.
         </p>
         <br>
-        <form action = "serverpage.php" method="post" onsubmit="return calculate()">
+        <form action = "" method="post" onsubmit="return calculate()">
                 <div>
                     <input type = "number" id = "principle" name = "principle" required placeholder="Ex. 25000">
             <br>
@@ -73,8 +73,16 @@
                 var interest = document.getElementById("iRate").value;
                 var mPayment = document.getElementById("mMpayment").value;
                 var term = document.getElementById("termType");
-                var termType = term.options[term.selectedIndex].text;
-                
+                var termType = term.options[term.selectedIndex].value;
+                var lengthTerm = document.getElementById("term");
+                const totalCost = 0;
+                if(termType == 'annual'){
+                    //add calculations
+                }else if(termType == 'monthly'){
+                    //add calculations
+                }else if(termType == 'quarterly'){
+                    //add calculations
+                }
             }
         </script>
     </body>
