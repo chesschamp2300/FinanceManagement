@@ -8,6 +8,31 @@
         <link rel = "stylesheet" href = "{{url_for('static',filename='myStylesheet.css')}}">
         <style>
         </style>
+        <script>
+            function calculate(){
+                var loan = document.getElementById("principle").value;
+                var interest = document.getElementById("iRate").value;
+                var mPayment = document.getElementById("mMpayment").value;
+                var term = document.getElementById("termType");
+                var termType = term.options[term.selectedIndex].value;
+                var principle = parseFloat(loan.value);
+                var calculatedInterest = parseFloat(interest.value) / 100;
+                var cost = document.getElementById("cost");
+                var totalCost = principle * (1+(calculatedInterest/100)/12) - mPayment;
+                cost.innerHTML = "" + totalCost;
+                if(termType == "annual"){
+                    //add calculations
+                    var totalCost = principle * (1+(calculatedInterest/100)/12) - mPayment;
+                    cost.innerHTML = "" + totalCost;
+                }else if(termType == "monthly"){
+                    //add calculations
+                    var totalCost = principle * (1+(calculatedInterest/100)/1) - mPayment;
+                }else if(termType == "quarterly"){
+                    //add calculations
+                    var totalCost = principle * (1+(calculatedInterest/100)/4) - mPayment;
+                }
+            }
+        </script>
     </head>
     <body>
         <h3>Hack OHI/O</h3>
@@ -78,14 +103,14 @@
                 var cost = document.getElementById("cost");
                 var totalCost = principle * (1+(calculatedInterest/100)/12) - mPayment;
                 cost.innerHTML = "" + totalCost;
-                if(termType === 'annual'){
+                if(termType == "annual"){
                     //add calculations
                     var totalCost = principle * (1+(calculatedInterest/100)/12) - mPayment;
                     cost.innerHTML = "" + totalCost;
-                }else if(termType === 'monthly'){
+                }else if(termType == "monthly"){
                     //add calculations
                     var totalCost = principle * (1+(calculatedInterest/100)/1) - mPayment;
-                }else if(termType === 'quarterly'){
+                }else if(termType == "quarterly"){
                     //add calculations
                     var totalCost = principle * (1+(calculatedInterest/100)/4) - mPayment;
                 }
