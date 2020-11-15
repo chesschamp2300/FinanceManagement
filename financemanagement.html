@@ -16,36 +16,40 @@
         <p>Most Students default to paying the minimun monthly amount on student loans without realizing how much paying even a little more can save in the long run.</p>
         <h2>Loan Calculator</h2>
         <p>
-           A loan calculator to help you determine what payment is optimal based on information given.
+          A loan calculator to help you determine what payment is optimal based on information given.
            Enter Loan Amount,Interest Rate, and Monthly Minimun Payment. Use slider to adjust monthly payments to view your savings.
         </p>
         <br>
-        <form action = "serverpage.php" method="post">
+        <form action = "" method="post" onsubmit="return calculate()">
                 <div>
-                    <input type = "number" id = "principle" name = "principle" required placeholder="Ex. 25000">
+                    <input type = "number" id = "principle" name = "principle" required placeholder="Ex. 25000" onkeypress="calculate()">
             <br>
                     <label for = "principle"><b>Loan Amount</b></label>
                 </div>
             <br>
                 <label for="term">Type of term:</label>
                     <select id="termType" name="termType" class = "select">
-                      <option value="anual">Annual</option>
+                      <option value="annual">Annual</option>
                       <option value="monthly">Monthly</option>
                       <option value="quarterly">Quarterly</option>
                     </select>
             <br>
             <br>
                 <div>
-                    <input type = "number" id = "iRate" name = "iRate>" required placeholder="Ex. 6">
+                    <input type = "number" id = "iRate" name = "iRate>" required placeholder="Ex. 6" onkeypress="calculate()">
                     <br>
-                    <label for = "iRate"><b>Interest Rate %</b></label>
+                    <label for = "iRate"><b>Interest Rate</b></label>
                 </div>
             <br>
                 <div>
-                   <input type = "number" id = "mMpayment" name = mMpayment required placeholder="Ex. 600"><br>
+                   <input type = "number" id = "mMpayment" name = mMpayment required placeholder="Ex. 600" onkeypress="calculate()"><br>
                    <label for = "mMpayment"><b>Monthly Minimun Payment</b></label> 
                 </div>
+            
+            <br>
+            
                 <div>
+                    <input type="submit" value="Calculate" id="calculate">
                 </div>
             
             <br>
@@ -54,32 +58,29 @@
                 </div>
                 <div> 
             <br>
-                    <label for = "totalCost"><b>Total Cost:</b></label><br><br>
-                    <label for = "totalSav"><b>Total Savings:</b></label>
+					<label for = "newMonthly"><b>New Monthly Payment: </b></label><br><br>
+                    <label for = "totalCost"><b>Total Cost: </b></label><br><br>
+                    <label for = "totalSav"><b>Total Savings: </b></label>
                 </div>
         </form>
         <script>
-            var principle = document.getElementById("principle");
-            var interest = document.getElementById("iRate");
-            var mPayment = document.getElementById("mMpayment");
-            principle.addEventListener("keyup", function(event) {
-            if (event.keyCode === 13) {
-                event.preventDefault();
-                document.getElementById("mybutton").click();
+            function calculate(){
+                var principle = document.getElementById("principle").value;
+                var interest = document.getElementById("iRate").value;
+                var mPayment = document.getElementById("mMpayment").value;
+                var term = document.getElementById("termType");
+                var termType = term.options[term.selectedIndex].value;
+                var lengthTerm = document.getElementById("term");
+                const totalCost = 0;
+				const totalSavings = 0;
+                if(termType == 'annual'){
+                    //add calculations
+                }else if(termType == 'monthly'){
+                    //add calculations
+                }else if(termType == 'quarterly'){
+                    //add calculations
+                }
             }
-            });
-            interest.addEventListener("keyup", function(event) {
-            if (event.keyCode === 13) {
-                event.preventDefault();
-                document.getElementById("mybutton").click();
-            }
-            });
-            mPayment.addEventListener("keyup", function(event) {
-            if (event.keyCode === 13) {
-                event.preventDefault();
-                document.getElementById("mybutton").click();
-            }
-            });
         </script>
     </body>
 </html>
