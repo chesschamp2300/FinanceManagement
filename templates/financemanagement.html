@@ -8,6 +8,7 @@
         <link rel = "stylesheet" href = "{{url_for('static',filename='myStylesheet.css')}}">
         <style>
         </style>
+        <script src="{{url_for('static',filename='main.js')}}"></script>
     </head>
     <body>
         <h3>Hack OHI/O</h3>
@@ -28,7 +29,7 @@
         <br>
         <section>
             <section>
-                <section class="input_area" action = "serverpage.php" method="post">
+                <section class="input_area">
                         <div>
                             <label for = "principle"><b>Loan Amount:</b></label>
                             <input type = "number" id = "principle" name = "principle" required placeholder="Ex. 25000">
@@ -47,10 +48,12 @@
                             </select>
                         </div>
                         <div>
-                            <label for = "mMpayment"><b>Monthly Minimun Payment:</b></label> 
+                            <label for = "mMpayment"><b>Monthly Minimum Payment:</b></label> 
                             <input type = "number" id = "mMpayment" name = mMpayment required placeholder="Ex. 600"><br>
                         </div>
-                        
+                        <div>
+                            <input style="display: none" type="button" value="Calculate" id="calculate" onclick="calculate()">
+                        </div>
                         <div class="slidecontainer">
                             <input type="range" min="mMpayment" max="principle" value="" class="slider" id="Range">
                         </div>
@@ -64,6 +67,5 @@
                 <h3>graph area</h3>
             </section>
         </section>
-        <script src="{{url_for('static',filename='main.js')}}"></script>
     </body>
 </html>

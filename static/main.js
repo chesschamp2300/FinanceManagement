@@ -4,27 +4,42 @@ var mPayment = document.getElementById("mMpayment");
 var period = document.getElementById('termType')
 
 
-principle.addEventListener("input", )
-
-// principle.addEventListener("keyup", function(event) {
-// if (event.keyCode === 13) {
-//     event.preventDefault();
-//     document.getElementById("mybutton").click();
-// }
-// });
+principle.addEventListener("keyup", function(event) {
+if (event === 13) {
+    event.preventDefault();
+    document.getElementById("calculate").click();
+}
+});
 interest.addEventListener("keyup", function(event) {
 if (event === 13) {
     event.preventDefault();
-    document.getElementById("mybutton").click();
+    document.getElementById("calculate").click();
 }
 });
 mPayment.addEventListener("keyup", function(event) {
 if (event === 13) {
     event.preventDefault();
-    document.getElementById("mybutton").click();
+    document.getElementById("calculate").click();
 }
 });
 
+function calculate(){
+    var loan = parseFloat(principle.value);
+    var i = parseFloat(interest.value) / 100;
+    var mp = mPayment.value;
+    var termType = period.options[period.selectedIndex].value;
+    var p;
+    if(termType == "annual"){
+        p = 12;
+    }else if(termType == "monthly"){
+        p = 1;
+    }else{
+        p = 4;
+    }
+    [runPrinciple, runInterest, totalInterest] = calculateInterest(loan, i, p, mp);
+    var total = runPrinciple + runInterest;
+    alert("Cost: " + total);
+}
 
 function calculateInterest(principle,iRate,period,payment)
 {
